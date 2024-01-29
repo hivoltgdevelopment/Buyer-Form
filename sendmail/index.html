@@ -147,13 +147,14 @@
         var json = JSON.stringify(object);
 
         // Make fetch request to the AWS API Gateway endpoint
-        fetch('https://v7m5k9hua2.execute-api.us-west-2.amazonaws.com', {
-            method: 'POST',
+        fetch('https://v7m5k9hua2.execute-api.us-west-2.amazonaws.com/Submit-Form/', {
+            method: 'POST', // or 'GET'
             headers: {
-                'Content-Type': 'application/json'
-            },
-            body: json
-        })
+        'Content-Type': 'application/json'
+        // Include other headers as needed
+    },
+    body: JSON.stringify(yourRequestBody)
+    })
         .then(response => response.json())
         .then(data => {
             console.log('Success:', data);
