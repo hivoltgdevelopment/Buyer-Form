@@ -1,0 +1,26 @@
+<script>
+    async function handleFormSubmit(event) {
+        event.preventDefault(); // Prevents the default form submission action
+
+        var form = document.getElementById('realEstateForm');
+        var formData = new FormData(form);
+
+        // Sending form data to your server
+        try {
+            const response = await fetch('/send-email', {
+                method: 'POST',
+                body: formData
+            });
+
+            // Redirect to confirmation page on success
+            if (response.ok) {
+                window.location.href = 'confirmation.html';
+            } else {
+                // Handle error
+                alert('Failed to send email. Please try again.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+</script>
