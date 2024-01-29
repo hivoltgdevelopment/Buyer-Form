@@ -135,34 +135,42 @@
                 
     </style>
     <script>
-    function handleFormSubmit(event) {
-        event.preventDefault(); // Prevents the default form submission action
+        document.getElementById('realEstateForm').addEventListener('submit', function(event) {
+            event.preventDefault();
 
-        var form = document.getElementById('realEstateForm');
-        var formData = new FormData(form);
+            // Collect form data
+            var formData = new FormData(this);
 
-        // Convert formData to a JSON object
-        var object = {};
-        formData.forEach((value, key) => { object[key] = value; });
-        var json = JSON.stringify(object);
+            // Convert formData to a plain object
+            var object = {};
+            formData.forEach(function(value, key){
+                object[key] = value;
+            });
+            var json = JSON.stringify(object);
 
-        // Make fetch request to the AWS API Gateway endpoint
-        fetch('https://v7m5k9hua2.execute-api.us-west-2.amazonaws.com/Submit-Form/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: json
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-            window.location.href = 'confirmation.html'; // Redirect to confirmation page
-        })
-        .catch((error) => {
-            console.error('Error:', error);
+            // Make fetch request
+            fetch('https://your-api-gateway-url/endpoint', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: json
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('Network response was not ok.');
+            })
+            .then(data => {
+                console.log('Success:', data);
+                // Handle success (e.g., display a success message)
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                // Handle errors (e.g., display an error message)
+            });
         });
-    }
 </script>
  
     </head>
