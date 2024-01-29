@@ -33,19 +33,14 @@ async function sendEmail(formData) {
 }
 
 exports.handler = async (event) => {
-    try {
-        // Parse form data from event
-        const formData = JSON.parse(event.body);
-
-        // Validate formData here (optional)
-
-        // Send email
-        await sendEmail(formData);
-
-        return { statusCode: 200, body: 'Email sent successfully' };
-    } catch (error) {
-        console.error('Error:', error);
-        return { statusCode: 500, body: 'Internal Server Error' };
-    }
+    return {
+        statusCode: 200,
+        headers: {
+            "Access-Control-Allow-Origin": "https://d3mkjhw7w8at9a.cloudfront.net", // Match this with the actual origin
+            // Add other necessary headers
+        },
+        body: JSON.stringify(yourResponse)
+    };
 };
+
 
