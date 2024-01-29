@@ -135,7 +135,7 @@
                 
     </style>
     <script>
-        function handleFormSubmit(event) {
+    function handleFormSubmit(event) {
         event.preventDefault(); // Prevents the default form submission action
 
         var form = document.getElementById('realEstateForm');
@@ -147,14 +147,13 @@
         var json = JSON.stringify(object);
 
         // Make fetch request to the AWS API Gateway endpoint
-        fetch('https://v7m5k9hua2.execute-api.us-west-2.amazonaws.com/', {
-            method: 'POST', // or 'GET'
+        fetch('https://v7m5k9hua2.execute-api.us-west-2.amazonaws.com', {
+            method: 'POST',
             headers: {
-        'Content-Type': 'application/json'
-        // Include other headers as needed
-    },
-    body: JSON.stringify(yourRequestBody)
-    })
+                'Content-Type': 'application/json'
+            },
+            body: json
+        })
         .then(response => response.json())
         .then(data => {
             console.log('Success:', data);
@@ -164,7 +163,8 @@
             console.error('Error:', error);
         });
     }
-    </script> 
+</script>
+ 
     </head>
     <body>
 
