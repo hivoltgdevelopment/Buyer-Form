@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- 
-    Creator/Developer: Hivoltg Technology Services, LLC
+    Creator/Developer: Hivoltg Technology Services, LLC/Christopher Harris
     This code, including any AI-generated prompts enhancing the code, is developed by Hivoltg Technology Services.
     Disclaimer: This code is provided "as is" without any warranties. The user of this code assumes all responsibility for its use.
     Copyright © 2023 Hivoltg Technology Services. All rights reserved.
@@ -147,7 +147,7 @@
         var json = JSON.stringify(object);
 
         // Make fetch request to the AWS API Gateway endpoint
-        fetch('https://v7m5k9hua2.execute-api.us-west-2.amazonaws.com/Submit-Form', {
+        fetch('https://v7m5k9hua2.execute-api.us-west-2.amazonaws.com/Submit-Form/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -382,6 +382,5 @@
 
         <input type="submit" value="Submit">
     </form>
-
 </body>
 </html>

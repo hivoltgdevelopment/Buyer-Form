@@ -36,7 +36,7 @@ exports.handler = async (event) => {
     return {
         statusCode: 200,
         headers: {
-            "Access-Control-Allow-Origin": "https://d3mkjhw7w8at9a.cloudfront.net", // Match this with the actual origin
+            "Access-Control-Allow-Origin": "https://v7m5k9hua2.execute-api.us-west-2.amazonaws.com/Submit-Form/", // Match this with the actual origin
             // Add other necessary headers
         },
         body: JSON.stringify(yourResponse)
