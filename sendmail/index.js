@@ -33,11 +33,19 @@ async function sendEmail(formData) {
 }
 
 exports.handler = async (event) => {
+    // Assuming yourResponse contains the data you want to send back
+    const yourResponse = {
+        message: "Email sent successfully",
+        // Include any other response information here
+    };
+
     return {
         statusCode: 200,
         headers: {
-            "Access-Control-Allow-Origin": "https://v7m5k9hua2.execute-api.us-west-2.amazonaws.com/Submit-Form/", // Match this with the actual origin
-            // Add other necessary headers
+            "Access-Control-Allow-Origin": "https://d3mkjhw7w8at9a.cloudfront.net",
+            "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+            "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With",
+            "Access-Control-Allow-Credentials": "true" // Only set to true if your client needs to send credentials
         },
         body: JSON.stringify(yourResponse)
     };
