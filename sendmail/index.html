@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- 
-    Creator/Developer: Hivoltg Technology Services, LLC/Christopher Harris
+    Creator/Developer: Hivoltg Technology Services, LLC
     This code, including any AI-generated prompts enhancing the code, is developed by Hivoltg Technology Services.
     Disclaimer: This code is provided "as is" without any warranties. The user of this code assumes all responsibility for its use.
     Copyright © 2023 Hivoltg Technology Services. All rights reserved.
@@ -135,9 +135,31 @@
                 
     </style>
     <script>
-        https://hooks.zapier.com/hooks/catch/16117428/3lz2bv3/
-    </script>
- 
+        // Place the updated JavaScript function here
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Prevents the default form submission action
+
+            var form = document.getElementById('realEstateForm');
+            var formData = new FormData(form);
+            var emailBody = 'Hello,\n\nHere are the details from the form submission:\n';
+
+            // Loop through the form data and append to emailBody
+            for (var [key, value] of formData.entries()) {
+                emailBody += key + ': ' + value + '\n';
+            }
+
+            var encodedEmailBody = encodeURIComponent(emailBody);
+            var mailtoLink = 'mailto:info@homesbyroxanne.com?subject=New Contact&body=' + encodedEmailBody;
+            
+            // Open the mail client
+            window.location.href = mailtoLink; 
+
+            // Redirect to the confirmation page after a short delay
+            setTimeout(function() {
+                window.location.href = 'confirmation.html'; // Redirect to confirmation page
+            }, 1000); // Delay in milliseconds (1000 ms = 1 second)
+        }
+    </script> 
     </head>
     <body>
 
@@ -354,6 +376,7 @@
     </div>
 
         <input type="submit" value="Submit">
-    </form>
+</form>
+
 </body>
 </html>
