@@ -23,7 +23,7 @@
             background: #ffffff;
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 25px #0000001a;
         }
 
         h2 {
@@ -231,32 +231,36 @@
     <label for="desiredLocations">Desired Location(s):</label>
     <select id="desiredLocations" name="desiredLocations">
         <!-- Existing options -->
-        <option value="phoenix">Phoenix</option>
-        <option value="scottsdale">Scottsdale</option>
-        <option value="tempe">Tempe</option>
-        <option value="mesa">Mesa</option>
-        <option value="chandler">Chandler</option>
-        <option value="gilbert">Gilbert</option>
-        <option value="glendale">Glendale</option>
-        <option value="peoria">Peoria</option>
-        <option value="surprise">Surprise</option>
         <option value="avondale">Avondale</option>
-        <option value="goodyear">Goodyear</option>
-        <option value="buckeye">Buckeye</option>
-        <option value="queenCreek">Queen Creek</option>
-        <option value="fountainHills">Fountain Hills</option>
-        <option value="paradiseValley">Paradise Valley</option>
-        <option value="maricopa">maricopa</option>
-        <option value="santan valley">SanTan Valley</option>
+            <option value="buckeye">Buckeye</option>
+            <option value="carefree">Carefree</option>
+            <option value="cave creek">Cave Creek</option>
+            <option value="chandler">Chandler</option>
+            <option value="fountainHills">Fountain Hills</option>
+            <option value="gilbert">Gilbert</option>
+            <option value="glendale">Glendale</option>
+            <option value="goodyear">Goodyear</option>
+            <option value="maricopa">Maricopa</option>
+            <option value="mesa">Mesa</option>
+            <option value="paradiseValley">Paradise Valley</option>
+            <option value="peoria">Peoria</option>
+            <option value="phoenix">Phoenix</option>
+            <option value="queenCreek">Queen Creek</option>
+            <option value="san tan valley">San Tan Valley</option>
+            <option value="scottsdale">Scottsdale</option>
+            <option value="sun city">Sun City</option>
+            <option value="surprise">Surprise</option>
+            <option value="tempe">Tempe</option>
         <!-- Add other cities as needed -->
     </select><br>
 
     <label for="propertyType">Property Type:</label>
     <select id="propertyType" name="propertyType">
-        <option value="house">House</option>
+        <option value="singl family residence">Single Family Residence</option>
         <option value="condo">Condo</option>
-        <option value="apartment">Apartment</option>
-        <option value="other">Other</option>
+        <option value="patio home">Patio Home</option>
+        <option value="town home">Town Home</option>
+        <option value="multi family">Multi Family</option>
     </select><br>
 
         <label for="bedrooms">Number of Bedrooms:</label>
@@ -278,8 +282,10 @@
 
         <label for="propertySize">Desired Property Size (sq ft):</label>
         <select id="propertySize" name="propertySize">
+            <option value="uner 1000">Under 1000 sq ft</option>
+            <option value="1000-1500">1000-1500 sq ft</option>
             <option value="1500-2000">1500-2000 sq ft</option>
-            <option value="2100-2500">2100-2500 sq ft</option>
+            <option value="2000-2500">2000-2500 sq ft</option>
             <option value="2500-3000">2500-3000 sq ft</option>
             <option value="3000+">3000+ sq ft</option>
         </select><br>
@@ -300,18 +306,22 @@
             <option value="4">Carport</option>
         </select>
     </div><br>
-    <!-- Other fields for Real Estate Preferences -->
-    </div>
+    
 
     <!-- Financial Information Section -->
     <div class="form-section">
     <h3>Financial Information</h3>
         <label for="budget">Estimated Budget:</label>
+        <input type="text" id="workingWithLender" name="workingWithLender" placeholder="Are you working with a lender?"><br>
         <input type="number" id="budget" name="budget"><br>
         <label for="mortgage">Pre-approved for Mortgage?</label>
-         <select id="mortgage" name="mortgage">
+         <select id="mortgage" name="Mortgage">
+        <input type="number" id="estimated down payment" name="estimated down payment"><br>    
         <option value="yes">Yes</option>
-        <option value="no">NO</option>
+        <option value="no">No</option>
+        <input type="text" id="budgetDownPayment" name="budgetDownPayment" placeholder="Do you know your budget and down payment amount?"><br>
+        <input type="text" id="willingnessToCompete" name="willingnessToCompete" placeholder="Willingness to compete/get uncomfortable for the right home"><br>
+         <textarea id="dealBreakers" name="dealBreakers" placeholder="Deal breakers (Needs and Wants)"></textarea><br>
         <!-- Other options -->
     </select><br>
         <label for="purchaseDate">Intended Purchase Date:</label>
@@ -336,21 +346,9 @@
         <h3>Property Specifics</h3>
         <input type="text" id="areaPreference" name="areaPreference" placeholder="Area preference"><br>
         <input type="text" id="detachedAttached" name="detachedAttached" placeholder="Detached or Attached?"><br>
-        <input type="text" id="propertyTypeSpecific" name="propertyTypeSpecific" placeholder="Preferences for Condo, Ranch, Bi-Level/Tri-Level, Two-Story"><br>
+        <input type="text" id="propertyTypeSpecific" name="propertyTypeSpecific" placeholder="Preferences for Single-Story or Two-Story"><br>
         <!-- Existing Number of Bedrooms and Bathrooms fields are already present in the original form -->
         <input type="text" id="yardPreference" name="yardPreference" placeholder="Yard preference"><br>
-        <input type="text" id="basementPreference" name="basementPreference" placeholder="Basement preference"><br>
-        <input type="text" id="garageParkingPreference" name="garageParkingPreference" placeholder="Garage/Parking preferences"><br>
-    </div>
-
-    <!-- Financial Aspects Section -->
-    <div class="form-section">
-        <h3>Financial Aspects</h3>
-        <input type="text" id="workingWithLender" name="workingWithLender" placeholder="Are you working with a lender?"><br>
-        <input type="text" id="budgetDownPayment" name="budgetDownPayment" placeholder="Do you know your budget and down payment amount?"><br>
-        <input type="text" id="earnestMoneyDetails" name="earnestMoneyDetails" placeholder="Earnest Money, Inspection, Appraisal, Agent Commission details"><br>
-        <input type="text" id="willingnessToCompete" name="willingnessToCompete" placeholder="Willingness to compete/get uncomfortable for the right home"><br>
-        <textarea id="dealBreakers" name="dealBreakers" placeholder="Deal breakers (Needs and Wants)"></textarea><br>
     </div>
 
     <!-- Decision Making and Communication Section -->
