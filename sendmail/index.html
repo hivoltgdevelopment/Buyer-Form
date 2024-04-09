@@ -105,33 +105,55 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            body {
-                padding: 20px;
-            }
+    body {
+        padding: 10px;
+    }
 
-            .form-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
+    form {
+        padding: 20px;
+        border-radius: 10px; /* Slightly smaller border-radius for smaller screens */
+    }
 
-        .form-row > label,
-        .form-row > input,
-        .form-row > select {
-            flex: 1;
-            margin-right: 10px;
-        }
+    .form-section,
+    .checkbox-row,
+    .form-row {
+        flex-direction: column; /* Stack form elements vertically */
+    }
 
-        .form-row > label:last-child,
-        .form-row > input:last-child,
-        .form-row > select:last-child {
-            margin-right: 0;
-        }
+    .form-row {
+        margin-bottom: 15px; /* Increase spacing between form rows for better touch interaction */
+    }
 
-        input[type="submit"] {
-            display: block;
-            margin: 20px auto;
-        }
+    label,
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="number"],
+    input[type="date"],
+    select,
+    textarea,
+    input[type="submit"] {
+        width: 100%; /* Full width for better use of space */
+        margin-right: 0;
+        margin-bottom: 10px; /* Add some space below each input for clarity */
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        margin: 0 10px 10px 0; /* Adjust spacing around smaller elements for easier interaction */
+    }
+
+    .checkbox-row,
+    .form-row {
+        justify-content: flex-start; /* Align items to the start for column direction */
+    }
+
+    input[type="submit"] {
+        display: block; /* Ensure submit button is centered and full-width */
+        width: auto; /* Auto width to fit content or container */
+        margin: 20px auto; /* Center the button with automatic horizontal margins */
+    }
+    }
                 
     </style>
     <script>
