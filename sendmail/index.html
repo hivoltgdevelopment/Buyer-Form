@@ -10,7 +10,7 @@
     <title>Tell Me More About Your Ideal Home!</title>
     <style>
         body {
-            font-family: 'Arial;
+            font-family: 'Arial';
             background-color: #e7e7e7;
             padding: 40px;
             color: #333;
@@ -27,7 +27,7 @@
         }
 
         h2 {
-            color: #AD11111;
+            color: #AD1111;
             margin-bottom: 20px;
             text-align: center;
             font-size: 30px;
@@ -167,16 +167,19 @@
 
     <form id="realEstateForm" onsubmit="handleFormSubmit(event)">
         <!-- Checkbox Section -->
-    <div class="checkbox-row">
-        <label for="buying">Buying</label>
-        <input type="checkbox" id="buying" name="purpose" value="buying">
-
-        <label for="selling">Selling</label>
-        <input type="checkbox" id="selling" name="purpose" value="selling">
-
-        <label for="leasing">Leasing</label>
-        <input type="checkbox" id="leasing" name="purpose" value="leasing">
-    </div>
+        <!-- Purpose Section with fieldset for better grouping and accessibility -->
+<fieldset class="checkbox-row">
+    <legend>What is your purpose?</legend> <!-- Descriptive legend for the group -->
+    
+    <label for="buying">Buying</label>
+    <input type="checkbox" id="buying" name="purpose" value="buying">
+    
+    <label for="selling">Selling</label>
+    <input type="checkbox" id="selling" name="purpose" value="selling">
+    
+    <label for="leasing">Leasing</label>
+    <input type="checkbox" id="leasing" name="purpose" value="leasing">
+</fieldset>
 
 <!-- Personal Information Section -->
 <div class="form-section">
